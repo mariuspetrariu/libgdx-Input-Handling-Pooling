@@ -13,7 +13,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 public class InputHandlingPooling extends ApplicationAdapter
     {
         private static final Logger             LOGGER_INFO = new Logger ( InputHandlingPooling.class.getName () , Logger.INFO );
-        private static       int                displayLogger;
+        private static       int                displayLogger = 0;
         private              SpriteBatch        batch;
         private              BitmapFont         font;
         private              OrthographicCamera camera;
@@ -52,6 +52,10 @@ public class InputHandlingPooling extends ApplicationAdapter
                 boolean rightMouseButtonPressed = Gdx.input.isButtonPressed ( Input.Buttons.RIGHT );
                 font.draw ( batch , "left mouse button is" + ( leftMouseButtonPressed ? "" : "n't " ) + " pressed" , 20 , 720 - 60 );
                 font.draw ( batch , "right mouse button is" + ( rightMouseButtonPressed ? "" : "n't " ) + " pressed" , 20 , 720 - 100 );
+                boolean isAPressed = Gdx.input.isKeyPressed ( Input.Keys.A );
+                boolean isSPressed = Gdx.input.isKeyPressed ( Input.Keys.S );
+                font.draw ( batch , "A key is" + ( isAPressed ? "" : "n't " ) + " pressed" , 20 , 720 - 140 );
+                font.draw ( batch , "S key is" + ( isSPressed ? "" : "n't " ) + " pressed" , 20 , 720 - 180 );
                 batch.end ();
             }
 
